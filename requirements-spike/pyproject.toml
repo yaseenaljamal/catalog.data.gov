@@ -1,0 +1,51 @@
+[tool.poetry]
+name = "catalog.data.gov"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^2.7"
+Flask = "0.12.4"
+"zope.interface" = "4.3.2"
+fanstatic = "0.12"
+Routes = "1.13"
+"repoze.who" = "2.3"
+click = "6.7"
+ckan = "2.8.4"
+sqlparse = "0.2.2"
+Pylons = "0.9.7"
+passlib = "1.6.5"
+psycopg2 = "2.7.3.2"
+sqlalchemy-migrate = "0.10.0"
+WebHelpers = "1.3"
+"pyutilib.component.core" = "4.6.4"
+pysolr = "3.6.0"
+Jinja2 = "2.8"
+python-magic = "0.4.15"
+SQLAlchemy = "1.1.11"
+simplejson = "3.10.0"
+Flask-Babel = "0.11.2"
+pytz = "2016.7"
+tzlocal = "1.3"
+bleach = "2.1.3"
+python-dateutil = ">=1.5.0,<2.0.0"
+paste = "1.7.5.1"
+requests = "2.11.1"
+rq = "0.6.0"
+Markdown = "2.6.7"
+WebOb = "1.0.8"
+WebTest = "1.4.3"
+ofs = "0.4.2"
+Pairtree = "0.7.1-T"
+unicodecsv = ">=0.9"
+polib = "1.0.7"
+"repoze.who-friendlyform" = "1.0.8"
+vdm = "0.14"
+pastescript = "2.0.2"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
