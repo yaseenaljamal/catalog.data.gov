@@ -1,0 +1,7 @@
+FROM catalog.data.gov/python:latest
+
+RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
+ENV PATH=$CKAN_HOME/.poetry/bin:$PATH
+COPY use-poetry.sh $CKAN_VENV/bin
+CMD $CKAN_VENV/bin/use-poetry.sh
+

@@ -1,0 +1,5 @@
+FROM catalog.data.gov/python:latest
+RUN $CKAN_VENV/bin/pip install pipenv
+COPY use-pipenv.sh $CKAN_VENV/bin
+CMD $CKAN_VENV/bin/use-pipenv.sh
+

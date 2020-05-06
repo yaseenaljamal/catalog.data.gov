@@ -1,0 +1,61 @@
+version: '3'
+services:
+
+  # base image with python 2.7.17 and all (?) OS dependencies
+  
+  python:
+    image: catalog.data.gov/python:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ".:/src"
+
+  # install requirements using pip
+  
+  ckan-pip:
+    image: catalog.data.gov/ckan-pip:latest
+    build:
+      context: .
+      dockerfile: Dockerfile.pip    
+    volumes:
+      - ".:/src"
+    env_file: .env
+    user: $UID
+
+  # install requirements using pip-tools
+
+  ckan-pip-tools:
+    image: catalog.data.gov/ckan-pip-tools:latest
+    build:
+      context: .
+      dockerfile: Dockerfile.pip-tools
+    volumes:
+      - ".:/src"
+    env_file: .env
+    user: $UID
+
+  # install requirements using pipenv
+
+  ckan-pipenv:
+    image: catalog.data.gov/ckan-pipenv:latest
+    build:
+      context: .
+      dockerfile: Dockerfile.pipenv
+    volumes:
+      - ".:/src"
+    env_file: .env
+    user: $UID
+    
+  # install requirements using poetry
+
+  ckan-poetry:
+    image: catalog.data.gov/ckan-poetry:latest
+    build:
+      context: .
+      dockerfile: Dockerfile.poetry
+    volumes:
+      - ".:/src"
+    env_file: .env
+    user: $UID
+    

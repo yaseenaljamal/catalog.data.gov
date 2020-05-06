@@ -1,0 +1,4 @@
+FROM catalog.data.gov/python:latest
+COPY use-pip.sh $CKAN_VENV/bin
+CMD $CKAN_VENV/bin/use-pip.sh
+

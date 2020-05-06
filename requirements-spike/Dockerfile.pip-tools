@@ -1,0 +1,5 @@
+FROM catalog.data.gov/python:latest
+RUN $CKAN_VENV/bin/pip install pip-tools
+COPY use-pip-tools.sh $CKAN_VENV/bin
+CMD $CKAN_VENV/bin/use-pip-tools.sh
+
