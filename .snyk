@@ -9,7 +9,7 @@ ignore:
         reason: >-
           No remediation available yet; Not affecting us 
           since the storage is not accessible to any other client
-        expires: 2020-11-19T06:00:00.000Z
+        expires: 2021-01-08T06:00:00.000Z
   
   SNYK-PYTHON-PYYAML-590151:
     - '*':
@@ -17,7 +17,7 @@ ignore:
           No remediation available yet. YAML files are loaded only
           as text fixtures (trusted source and execution context.)
           Risk is acceptable.
-        expires: 2020-11-19T06:00:00.000Z
+        expires: 2021-01-08T06:00:00.000Z
 
   SNYK-PYTHON-SQLALCHEMY-173678:
     - '*':
@@ -26,7 +26,7 @@ ignore:
           CKAN 2.9 is, however.  To properly evaluate the risk,
           we should examine all use of 'group_by' and 'order_by'
           to determine that all input to those operators are sanitized.
-        expires: 2020-09-10T06:00:00.000Z
+        expires: 2021-01-08T06:00:00.000Z
 
   SNYK-PYTHON-PASSLIB-569603:
     - '*':
@@ -35,14 +35,14 @@ ignore:
           Risk appears to be very low.  The vulnerability is in the passlib
           bcrypt() implementation, and CKAN (2.8) uses pbkdf2.  In addition,
           in production environments we use a SAML provider for auth.
-        expires: 2020-11-19T06:00:00.000Z
+        expires: 2021-01-08T06:00:00.000Z
         
   SNYK-PYTHON-WEBOB-40490:
     - '*':
         reason: >-
           No remediation path available for CKAN2.8 (not compatible
           with webob > 1.0.8).
-        expires: 2020-11-19T06:00:00.000Z
+        expires: 2020-01-08T06:00:00.000Z
 
   SNYK-PYTHON-IPADDRESS-590065:
     - '*':
@@ -51,7 +51,7 @@ ignore:
           Python cryptography package, I see no use of the vulnerable
           method hash() on the classes IPv4Interface and IPv6Interface, 
           so the risk here is very minimal.
-        expires: 2020-11-19T06:00:00.000Z
+        expires: 2021-01-08T06:00:00.000Z
             
 patch: {}
    
