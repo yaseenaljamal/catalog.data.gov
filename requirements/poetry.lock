@@ -260,7 +260,7 @@ python-versions = "*"
 version = "0.1"
 
 [package.source]
-reference = "54647da628609543e01731bfc37f0c3d0ad9f0e2"
+reference = "842096d1fd2d32c3a7d6da9a28a58dbfe6db9354"
 type = "git"
 url = "https://github.com/GSA/ckanext-googleanalyticsbasic.git"
 [[package]]
