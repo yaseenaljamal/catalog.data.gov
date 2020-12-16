@@ -20,7 +20,7 @@ chardet==3.0.4
 ckanext-envvars==0.0.1
 -e git+https://github.com/GSA/ckanext-geodatagov.git@5393def8735fd151f9f9a70fa72bd795d9375342#egg=ckanext-geodatagov
 -e git+https://github.com/GSA/ckanext-googleanalyticsbasic.git@842096d1fd2d32c3a7d6da9a28a58dbfe6db9354#egg=ckanext-googleanalyticsbasic
--e git+https://github.com/ckan/ckanext-harvest.git@95e82c222b9fb26889829c5b0dae2053153e409e#egg=ckanext-harvest
+-e git+https://github.com/ckan/ckanext-harvest.git@d00553831e20ae7c6737206ddb8a613b494f2b86#egg=ckanext-harvest
 -e git+https://github.com/ckan/ckanext-qa.git@d7d384cb18a85243ea62ef0bcc76bc1775f1c806#egg=ckanext-qa
 -e git+https://github.com/davidread/ckanext-report.git@b67875b2a5b4c9b9ab2cf255f074226255ca9398#egg=ckanext-report
 -e git+https://github.com/GSA/ckanext-saml2.git@07df14dba0d42c83cd6cdd95a16279198a8d5349#egg=ckanext-saml2
@@ -111,7 +111,6 @@ tempita==0.5.2
 tzlocal==1.3
 unicodecsv==0.14.1
 urllib3==1.25.9
-vdm==0.15
 webencodings==0.5.1
 weberror==0.13.1
 webhelpers==1.3

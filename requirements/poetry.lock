@@ -272,7 +272,7 @@ python-versions = "*"
 version = "1.3.2"
 
 [package.source]
-reference = "95e82c222b9fb26889829c5b0dae2053153e409e"
+reference = "d00553831e20ae7c6737206ddb8a613b494f2b86"
 type = "git"
 url = "https://github.com/ckan/ckanext-harvest.git"
 [[package]]
@@ -1342,14 +1342,6 @@ socks = ["PySocks (>=1.5.6,<1.5.7 || >1.5.7,<2.0)"]
 
 [[package]]
 category = "main"
-description = "A versioned domain model framework."
-name = "vdm"
-optional = false
-python-versions = "*"
-version = "0.15"
-
-[[package]]
-category = "main"
 description = "Character encoding aliases for legacy web content"
 name = "webencodings"
 optional = false
@@ -1446,7 +1438,7 @@ test = ["zope.event"]
 testing = ["zope.event", "nose", "coverage"]
 
 [metadata]
-content-hash = "3e9ecd92eef1623bc7bfd052c7369ae0f4a3a304ffa2a776ec1965f2632bfc35"
+content-hash = "84351654d782cdde5f90756fe7ac3a2f027ebafee46e4788db0877aa4d557c28"
 lock-version = "1.0"
 python-versions = "^2.7"
 
@@ -2101,9 +2093,6 @@ unicodecsv = [
 urllib3 = [
     {file = "urllib3-1.25.9-py2.py3-none-any.whl", hash = "sha256:88206b0eb87e6d677d424843ac5209e3fb9d0190d0ee169599165ec25e9d9115"},
     {file = "urllib3-1.25.9.tar.gz", hash = "sha256:3018294ebefce6572a474f0604c2021e33b3fd8006ecd11d62107a5d2a963527"},
-]
-vdm = [
-    {file = "vdm-0.15.tar.gz", hash = "sha256:65b75bb342280114e3c9794fbe5c54b77a9d997fbe07dae50aa303381ccfa26e"},
 ]
 webencodings = [
     {file = "webencodings-0.5.1-py2.py3-none-any.whl", hash = "sha256:a0af1213f3c2226497a97e2b3aa01a7e4bee4f403f95be16fc9acd2947514a78"},
