@@ -1,0 +1,30 @@
+#!/bin/bash
+
+set -o errexit
+set -o pipefail
+set -o nounset
+
+function usage () {
+  cat <<EOF
+$0: <inventory> <playbook> [ansible-group]
+
+Ansible wrapper for Jenkins.
+
+  inventory: The Ansible inventory to target (ansible --inventory).
+
+  playbook: The Ansible playbook to run.
+
+  ansible-group: The Ansible host-speciifcation to use (ansible --limit).
+EOF
+}
+
+if [ "$#" -lt 2 ]; then
+  usage >&2
+  exit 1
+fi
+
+inventory=$1
+playbook=$2
+limit=${3:-all}
+
+exec docker run --rm -v $SSH_KEY_FILE:$SSH_KEY_FILE -v $ANSIBLE_VAULT_FILE:$ANSIBLE_VAULT_FILE -u $(id -u) datagov/datagov-deploy:latest pipenv run ansible-playbook --key-file=$SSH_KEY_FILE --vault-password-file=$ANSIBLE_VAULT_FILE --inventory "inventories/$inventory" "$playbook" --limit "$limit"

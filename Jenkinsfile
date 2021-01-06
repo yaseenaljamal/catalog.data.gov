@@ -1,20 +1,53 @@
 pipeline {
   agent any
-  environment {
-    INVENTORY = 'inventories/sandbox'
-    PLAYBOOK = 'catalog.yml'
-  }
   stages {
-    stage('deploy') {
-      when { anyOf { branch 'master' } }
+    stage('workflow:sandbox') {
+      when { anyOf { environment name: 'DATAGOV_WORKFLOW', value: 'sandbox' } }
+      stages {
+        stage('deploy:sandbox') {
+          when { anyOf { branch 'master' } }
+          environment {
+            ANSIBLE_VAULT_FILE = credentials('ansible-vault-secret')
+            SSH_KEY_FILE = credentials('datagov-sandbox')
+          }
+          steps {
+            ansiColor('xterm') {
+              echo 'Deploying with Ansible'
+              sh 'bin/jenkins_ansible sandbox catalog.yml catalog-next'
+            }
+          }
+        }
+      }
+    }
+    stage('workflow:production') {
+      when { anyOf { environment name: 'DATAGOV_WORKFLOW', value: 'production' } }
       environment {
         ANSIBLE_VAULT_FILE = credentials('ansible-vault-secret')
-        SSH_KEY_FILE = credentials('datagov-sandbox')
       }
-      steps {
-        ansiColor('xterm') {
-          echo 'Deploying with Ansible'
-          sh 'docker run --rm -v $SSH_KEY_FILE:$SSH_KEY_FILE -v $ANSIBLE_VAULT_FILE:$ANSIBLE_VAULT_FILE -u $(id -u) datagov/datagov-deploy:latest pipenv run ansible-playbook --key-file=$SSH_KEY_FILE --vault-password-file=$ANSIBLE_VAULT_FILE --inventory $INVENTORY $PLAYBOOK --limit catalog-next'
+      stages {
+        stage('deploy:staging') {
+          when { anyOf { branch 'master' } }
+          environment {
+            SSH_KEY_FILE = credentials('datagov-staging')
+          }
+          steps {
+            ansiColor('xterm') {
+              echo 'Deploying with Ansible'
+              sh 'bin/jenkins_ansible staging catalog.yml catalog-next'
+            }
+          }
+        }
+        stage('deploy:production') {
+          when { anyOf { branch 'master' } }
+          environment {
+            SSH_KEY_FILE = credentials('datagov-production')
+          }
+          steps {
+            ansiColor('xterm') {
+              echo 'Deploying with Ansible'
+              sh 'bin/jenkins_ansible production catalog.yml catalog-next'
+            }
+          }
         }
       }
     }
