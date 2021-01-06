@@ -118,7 +118,9 @@ workflows:
             - test
           filters:
             branches:
-              only: master
+              only:
+                - master
+                - feature/jenkins-production
       - test_importer
       - test
       - docker_publish_catalog:
