@@ -30,7 +30,7 @@ debug:
 	docker-compose run --service-ports ckan
 
 requirements:
-	docker-compose run --rm -T ckan pip --quiet freeze > requirements-freeze.txt
+	docker-compose run --rm -T ckan pip --quiet freeze > requirements.txt
 
 test:
 	docker build -t datagov/catalog.data.gov:latest ckan/

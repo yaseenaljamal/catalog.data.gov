@@ -10,7 +10,7 @@ This is a local development harness for catalog.data.gov.
 ## Usage
 
 The _only_  deployable artifact associated with this repository is the
-`requirements-freeze.txt` file. See [datagov-deploy](https://github.com/GSA/datagov-deploy)
+`requirements.txt` file. See [datagov-deploy](https://github.com/GSA/datagov-deploy)
 for full configuration in live environments.
 
 The live environment is different than the development environment in
@@ -144,7 +144,7 @@ poetry can take several minutes to re-generate a lock file (in once case even up
 to 17 minutes)._
 
 To support sandbox installation via the ansible playbooks, there is a
-symbolic link `requirements-freeze.txt` that references
+symbolic link `requirements.txt` that references
 `ckan/requirements.txt`.
 
 ### Adding new extensions in requirements
