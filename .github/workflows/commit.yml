@@ -19,6 +19,8 @@ jobs:
           architecture: x64
       - name: vendor dependencies
         run: ./vendor-requirements.sh
+      - name: list vendored dependencies
+        run: ls -l vendor
       - uses: actions/upload-artifact@v2
         with:
           name: python-vendored
@@ -40,6 +42,7 @@ jobs:
         with:
           name: python-vendored
           path: vendor
+      - run: ls -l vendor
       - name: deploy
         uses: usds/cloud-gov-cli@master
         with:
