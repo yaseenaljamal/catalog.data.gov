@@ -48,7 +48,6 @@ jobs:
           ls -l build
           ls -l src
           ls -l vendor
-      - run: truncate ckan/requirements.txt
       - name: deploy
         uses: usds/cloud-gov-cli@master
         with:
