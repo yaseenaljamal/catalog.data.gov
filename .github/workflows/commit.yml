@@ -38,13 +38,13 @@ jobs:
       - name: deploy
         uses: usds/cloud-gov-cli@master
         with:
-          command: push inventory --vars-file vars.development.yml --strategy rolling
+          command: push catalog --vars-file vars.development.yml --strategy rolling
           org: gsa-datagov
           space: development
           user: ${{secrets.CF_SERVICE_USER}}
           password: ${{secrets.CF_SERVICE_AUTH}}
       - name: smoke test
-        run: curl --fail --silent https://inventory-dev-datagov.app.cloud.gov/api/action/status_show?$(date +%s)
+        run: curl --fail --silent https://catalog-dev-datagov.app.cloud.gov/api/action/status_show?$(date +%s)
 
   deploy-staging:
     if: github.ref == 'refs/heads/main'
@@ -62,13 +62,13 @@ jobs:
       - name: deploy
         uses: usds/cloud-gov-cli@master
         with:
-          command: push inventory --vars-file vars.staging.yml --strategy rolling
+          command: push catalog --vars-file vars.staging.yml --strategy rolling
           org: gsa-datagov
           space: staging
           user: ${{secrets.CF_SERVICE_USER}}
           password: ${{secrets.CF_SERVICE_AUTH}}
       - name: smoke test
-        run: curl --fail --silent https://inventory-stage-datagov.app.cloud.gov/api/action/status_show?$(date +%s)
+        run: curl --fail --silent https://catalog-stage-datagov.app.cloud.gov/api/action/status_show?$(date +%s)
 
   deploy-production:
     if: github.ref == 'refs/heads/main'
@@ -86,10 +86,10 @@ jobs:
       - name: deploy
         uses: usds/cloud-gov-cli@master
         with:
-          command: push inventory --vars-file vars.production.yml --strategy rolling
+          command: push catalog --vars-file vars.production.yml --strategy rolling
           org: gsa-datagov
           space: prod
           user: ${{secrets.CF_SERVICE_USER}}
           password: ${{secrets.CF_SERVICE_AUTH}}
       - name: smoke test
-        run: curl --fail --silent https://inventory-prod-datagov.app.cloud.gov/api/action/status_show?$(date +%s)
+        run: curl --fail --silent https://catalog-prod-datagov.app.cloud.gov/api/action/status_show?$(date +%s)
