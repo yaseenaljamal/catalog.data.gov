@@ -43,6 +43,7 @@ jobs:
           name: python-vendored
           path: vendor
       - run: ls -l vendor
+      - run: rm requirements.txt requirements-freeze.txt
       - name: deploy
         uses: usds/cloud-gov-cli@master
         with:
