@@ -43,7 +43,7 @@ jobs:
           name: python-vendored
           path: vendor
       - run: ls -l vendor
-      - run: truncate requirements.txt
+      - run: truncate ckan/requirements.txt
       - name: deploy
         uses: usds/cloud-gov-cli@master
         with:
