@@ -24,7 +24,10 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: python-vendored
-          path: vendor/
+          path:
+            - build/
+            - src/
+            - vendor/
           if-no-files-found: error
 
   deploy-development:
@@ -41,8 +44,10 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: python-vendored
-          path: vendor
-      - run: ls -l vendor
+      - run: |
+          ls -l build
+          ls -l src
+          ls -l vendor
       - run: truncate ckan/requirements.txt
       - name: deploy
         uses: usds/cloud-gov-cli@master

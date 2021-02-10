@@ -8,5 +8,5 @@ sudo apt-get -y update
 sudo apt-get -y install swig build-essential python-dev libssl-dev
 
 pip install --upgrade --user pip wheel setuptools
-pip download -r requirements.txt --no-binary=:none: -d vendor --exists-action=w
-pip wheel -r requirements.txt -w vendor --no-binary=:none:
+pip download -r ckan/requirements.txt --no-binary=:none: -d vendor --exists-action=w
+pip wheel -r ckan/requirements.txt -w vendor --no-binary=:none:
