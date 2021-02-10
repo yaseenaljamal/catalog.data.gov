@@ -12,6 +12,11 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2
+      - name: setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '2.x'
+          architecture: x64
       - name: vendor dependencies
         run: ./vendor-requirements.sh
       - uses: actions/upload-artifact@v2
