@@ -44,10 +44,10 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: python-vendored
-      - run: |
-          ls -l build
-          ls -l src
-          ls -l vendor
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
+        with:
+          limit-access-to-actor: true
       - name: deploy
         uses: usds/cloud-gov-cli@master
         with:
