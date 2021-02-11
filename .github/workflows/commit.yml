@@ -24,10 +24,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: python-vendored
-          path: |
-            build/
-            src/
-            vendor/
+          path: vendor/
           if-no-files-found: error
 
   deploy-development:
@@ -44,10 +41,10 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: python-vendored
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
-        with:
-          limit-access-to-actor: true
+      #- name: Setup tmate session
+      #  uses: mxschmitt/action-tmate@v3
+      #  with:
+      #    limit-access-to-actor: true
       - name: deploy
         uses: usds/cloud-gov-cli@master
         with:
