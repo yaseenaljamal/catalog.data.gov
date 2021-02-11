@@ -24,10 +24,10 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: python-vendored
-          path:
-            - build/
-            - src/
-            - vendor/
+          path: |
+            build/
+            src/
+            vendor/
           if-no-files-found: error
 
   deploy-development:
