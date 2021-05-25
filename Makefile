@@ -8,9 +8,9 @@ ci:
 	docker-compose up -d
 
 build:
-	docker build -t ghcr.io/gsa/catalog.data.gov:latest ckan/
-	docker build -t ghcr.io/gsa/catalog.data.gov.solr:latest solr/
-	docker build -t ghcr.io/gsa/catalog.data.gov.db:latest postgresql/
+	docker build --pull -t ghcr.io/gsa/catalog.data.gov:latest ckan/
+	docker build --pull -t ghcr.io/gsa/catalog.data.gov.solr:latest solr/
+	docker build --pull -t ghcr.io/gsa/catalog.data.gov.db:latest postgresql/
 	docker-compose build
 
 clean:
