@@ -110,6 +110,6 @@ Werkzeug==2.0.0
 wheel==0.38.4
 xlrd==2.0.1
 xmlschema==2.2.2
-zipp==3.15.0
+zipp==3.19.1
 zope.event==4.6
 zope.interface==6.0
